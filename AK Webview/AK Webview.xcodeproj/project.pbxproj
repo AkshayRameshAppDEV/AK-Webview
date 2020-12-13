@@ -56,15 +56,39 @@
 		B9FD34112586BFF600903225 /* AK Webview */ = {
 			isa = PBXGroup;
 			children = (
-				B9FD34122586BFF600903225 /* AppDelegate.swift */,
-				B9FD34142586BFF600903225 /* SceneDelegate.swift */,
-				B9FD34162586BFF600903225 /* ViewController.swift */,
-				B9FD34182586BFF600903225 /* Main.storyboard */,
+				B9FD34272586C05500903225 /* Supporting Files */,
+				B9FD34292586C06300903225 /* Controller */,
+				B9FD342B2586C08300903225 /* View */,
 				B9FD341B2586BFF800903225 /* Assets.xcassets */,
-				B9FD341D2586BFF800903225 /* LaunchScreen.storyboard */,
 				B9FD34202586BFF800903225 /* Info.plist */,
 			);
 			path = "AK Webview";
+			sourceTree = "<group>";
+		};
+		B9FD34272586C05500903225 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B9FD34122586BFF600903225 /* AppDelegate.swift */,
+				B9FD34142586BFF600903225 /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B9FD34292586C06300903225 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B9FD34162586BFF600903225 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B9FD342B2586C08300903225 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B9FD34182586BFF600903225 /* Main.storyboard */,
+				B9FD341D2586BFF800903225 /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
