@@ -8,24 +8,18 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController, WKUIDelegate {
-
-    var webView: WKWebView!
+class ViewController: UIViewController, WKNavigationDelegate {
+    let webView = WKWebView()
     
     override func loadView() {
-        let webConfiguration = WKWebViewConfiguration()
-        webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView.uiDelegate = self
-        view = webView
+        webView.navigationDelegate = self
+        self.view = webView
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        let url = URL(string: "https://www.apple.com")
-        let urlRequest = URLRequest(url: url!)
-        webView.load(urlRequest)
+            let url = URL(string: "https://www.google.com")!
+            webView.load(URLRequest(url: url))
+            webView.allowsBackForwardNavigationGestures = true
     }
-
-
 }
 
