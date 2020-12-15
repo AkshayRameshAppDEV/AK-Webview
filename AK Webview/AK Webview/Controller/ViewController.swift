@@ -12,6 +12,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
     
     let webView = WKWebView()
     var progressView: UIProgressView!
+    let websites = ["apple.com", "yahoo.com"]
     
     override func loadView() {
         webView.navigationDelegate = self
@@ -29,15 +30,16 @@ class ViewController: UIViewController, WKNavigationDelegate {
         toolbarItems = [progressButton, spacer, refresh]
         navigationController?.isToolbarHidden = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(open))
-        let url = URL(string: "https://www.google.com")!
+        let url = URL(string: "https://\(websites[0])")!
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true
     }
     
     @objc func open() {
         let actionController = UIAlertController(title: "Open Link", message: nil, preferredStyle: .actionSheet)
-        actionController.addAction(UIAlertAction(title: "www.yahoo.com", style: .default, handler: openTheLink))
-        actionController.addAction(UIAlertAction(title: "www.apple.com", style: .default, handler: openTheLink))
+        for website in websites {
+            actionController.addAction(UIAlertAction(title: website, style: .default, handler: openTheLink))
+        }
         actionController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         actionController.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
         present(actionController, animated: true)
@@ -56,6 +58,19 @@ class ViewController: UIViewController, WKNavigationDelegate {
         if keyPath == "estimatedProgress" {
             progressView.progress = Float(webView.estimatedProgress)
         }
+    }
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        let url = navigationAction.request.url
+        if let host = url?.host {
+            for website in websites {
+                if host.contains(website) {
+                    decisionHandler(.allow)
+                    return
+                }
+            }
+        }
+        decisionHandler(.cancel)
     }
 }
 
