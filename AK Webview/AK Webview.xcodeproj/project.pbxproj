@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9DC9CBA259039DD006B7AAC /* websites.txt in Resources */ = {isa = PBXBuildFile; fileRef = B9DC9CB9259039DD006B7AAC /* websites.txt */; };
 		B9F3DCD0258DD4B500344EEB /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F3DCCF258DD4B500344EEB /* WebViewController.swift */; };
 		B9FD34132586BFF600903225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD34122586BFF600903225 /* AppDelegate.swift */; };
 		B9FD34152586BFF600903225 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FD34142586BFF600903225 /* SceneDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B9DC9CB9259039DD006B7AAC /* websites.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = websites.txt; sourceTree = "<group>"; };
 		B9F3DCCF258DD4B500344EEB /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		B9FD340F2586BFF600903225 /* AK Webview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AK Webview.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9FD34122586BFF600903225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 		B9FD34272586C05500903225 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B9DC9CB9259039DD006B7AAC /* websites.txt */,
 				B9FD34122586BFF600903225 /* AppDelegate.swift */,
 				B9FD34142586BFF600903225 /* SceneDelegate.swift */,
 			);
@@ -151,6 +154,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9DC9CBA259039DD006B7AAC /* websites.txt in Resources */,
 				B9FD341F2586BFF800903225 /* LaunchScreen.storyboard in Resources */,
 				B9FD341C2586BFF800903225 /* Assets.xcassets in Resources */,
 				B9FD341A2586BFF600903225 /* Main.storyboard in Resources */,

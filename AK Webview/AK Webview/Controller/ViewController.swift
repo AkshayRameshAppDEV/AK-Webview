@@ -10,7 +10,17 @@ import WebKit
 
 class ViewController: UITableViewController {
     
-    let websites = ["apple.com", "yahoo.com"]
+    var websites = [String]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let websitesURL = Bundle.main.url(forResource: "websites", withExtension: "txt") {
+            if let w = try? String(contentsOf: websitesURL) {
+                websites = w.components(separatedBy: "\n")
+            }
+        }
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "websiteCell", for: indexPath)
